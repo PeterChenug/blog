@@ -5,12 +5,11 @@ var del = require('del');
 
 var paths = {
     scripts: [
-        'bower_components/jquery/dist/jquery.min.js',
-        'bower_components/material-design-lite/material.min.js',
-        'vendor/require.js'
+        'bower_components/material-design-lite/material.min.js'
     ],
     styles: [
         'bower_components/material-design-lite/material.min.css',
+        'bower_components/font-awesome/css/font-awesome.min.css',
         'dist/main.css'
     ]
 };
@@ -23,7 +22,7 @@ gulp.task('sass', function () {
         .pipe(sass())
         .pipe(gulp.dest('./dist/'));
 });
-gulp.task('contact', function () {
+gulp.task('contact', ['sass'], function () {
     gulp.src(paths.scripts)
         .pipe(contact('main.js'))
         .pipe(gulp.dest('./dist/'));
@@ -33,6 +32,6 @@ gulp.task('contact', function () {
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('default', ['clean', 'sass', 'contact'], function () {
+gulp.task('default', ['clean', 'contact'], function () {
     
 });
