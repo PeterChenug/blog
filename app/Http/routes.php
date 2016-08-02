@@ -11,6 +11,15 @@
 |
 */
 
-$app->get('/', function () use ($app) {
-    return view('index')->with('name', 'Title');
-});
+/**
+ * Home
+*/
+$app->get('/', 'WebController@index');
+$app->get('article/{id}', 'WebController@detail');
+/**
+ * Backend
+*/
+$app->get('backend', 'AdminController@index');
+$app->get('backend-article', 'AdminController@article');
+$app->get('backend-article-create', 'AdminController@addArticle');
+$app->post('backend-article-create', 'AdminController@addArticle');
