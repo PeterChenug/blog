@@ -35,7 +35,8 @@ class WebController extends Controller
             ->first();
         
         if($article) {
-            $content = $article->content;
+            $markdown = new \Parsedown();
+            $content = $markdown->text($article->content);
         }
         
         return $this->view('article', [
