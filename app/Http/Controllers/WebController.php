@@ -21,6 +21,7 @@ class WebController extends Controller
 
     public function index() {
         $ret = Article::query()
+            ->orderBy('updated_at', 'desc')
             ->paginate(10000);
         
         return $this->view('index', [

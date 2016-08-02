@@ -16,7 +16,7 @@
                 <a href="/" class="mdl-layout-title">裴妍一生</a>
                 <div class="mdl-demo-desc">
                     <h3>Peter's Blog</h3>
-                    <p>一个20多岁什么都会一点的PHP程序员</p>
+                    <p>一个快30岁什么都会一点的PHP程序员</p>
                     <div class="mdl-demo-icon">
                         <a target="_blank" href="http://weibo.com/2128726937" class="fa fa-weibo"></a>
                         <a target="_blank" href="https://github.com/PeterChenug" class="fa fa-github"></a>
