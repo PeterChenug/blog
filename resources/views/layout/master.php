@@ -34,5 +34,14 @@
             </main>
         </div>
         <script type="text/javascript" src="/static/dist/main.js"></script>
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?80cb08768b863cbb21e1dafe689ea805";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
     </body>
 </html>

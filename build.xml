@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="blog" default="build" basedir=".">
+    <target name="build" depends="make_runtime,tar"/>
+
+    <property name="version-m"  value="0.1" />
+    <property name="version"    value="0.1.1" />
+    <property name="stability"  value="develop" />
+    <property name="releasenotes" value="" />
+    <property name="tarfile"     value="blog.tar.gz" />
+    <property name="distfile"    value="./dist/${tarfile}" />
+
+    <fileset id="blog.tar.gz" dir=".">
+        <include name="app/**"/>
+        <include name="bootstrap/**"/>
+        <include name="database/**"/>
+        <include name="public/**"/>
+        <include name="resources/**"/>
+        <include name="artisan"/>
+        <include name="*.lock"/>
+        <include name="*.md"/>
+        <include name="vendor/**"/>
+
+        <exclude name=".git/**"/>
+        <exclude name="dist/**"/>
+        <exclude name=".idea/**"/>
+        <exclude name=".DS_Store"/>
+        <exclude name="build.xml"/>
+        <exclude name=".git*"/>
+        <exclude name="server.php"/>
+        <exclude name="phpunit.xml"/>
+        <exclude name="gulpfile.xml"/>
+        <exclude name="storage/**"/>
+        <exclude name=".env*"/>
+        <exclude name="public/static/bower_components/**"/>
+        <exclude name="public/static/node_modules/**"/>
+        <exclude name="package.json"/>
+    </fileset>
+
+    <target name="make_runtime">
+        <mkdir dir="${project.basedir}/dist" />
+    </target>
+
+    <target name="tar" description="Create tar file for release" depends="make_runtime">
+        <echo msg="Creating distribution tar for ${phing.project.name} ${version}"/>
+        <tar destfile="${distfile}" compression="gzip">
+            <fileset refid="blog.tar.gz"/>
+        </tar>
+    </target>
+</project>
