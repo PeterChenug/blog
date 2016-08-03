@@ -1,3 +1,3 @@
-<?php
-    echo $content;
-?>
+<article class="markdown-body">
+    <?php echo $content; ?>
+</article>

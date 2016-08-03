@@ -10,6 +10,9 @@ namespace App\Http\Controllers;
 
 
 use App\Article;
+use cebe\markdown\GithubMarkdown;
+use cebe\markdown\Markdown;
+use cebe\markdown\MarkdownExtra;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
@@ -36,8 +39,8 @@ class WebController extends Controller
             ->first();
         
         if($article) {
-            $markdown = new \Parsedown();
-            $content = $markdown->text($article->content);
+            $markdown  = new GithubMarkdown();
+            $content = $markdown->parse($article->content);
         }
         
         return $this->view('article', [
