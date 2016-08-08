@@ -14,6 +14,8 @@ use cebe\markdown\GithubMarkdown;
 use cebe\markdown\Markdown;
 use cebe\markdown\MarkdownExtra;
 use Illuminate\Http\Request;
+use Smalot\PdfParser\Parser;
+use Sunra\PhpSimple\HtmlDomParser;
 
 class WebController extends Controller
 {
@@ -24,8 +26,9 @@ class WebController extends Controller
 
     public function index() {
         $ret = Article::query()
+            ->where('publish', 1)
             ->orderBy('updated_at', 'desc')
-            ->paginate(10000);
+            ->paginate(1000);
         
         return $this->view('index', [
             'list' => $ret->items()
@@ -36,15 +39,15 @@ class WebController extends Controller
         $content = '悲伤,找不到了。。。。。';
         $article = Article::query()
             ->where('unique_id', $id)
+            ->where('publish', 1)
             ->first();
         
         if($article) {
-            $markdown  = new GithubMarkdown();
-            $content = $markdown->parse($article->content);
+            $article->content;
         }
         
         return $this->view('article', [
-            'content' => $content
+            'content' => $content 
         ]);
     }
 }

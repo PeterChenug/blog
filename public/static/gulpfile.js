@@ -10,8 +10,9 @@ var paths = {
     styles: [
         'bower_components/material-design-lite/material.min.css',
         'bower_components/font-awesome/css/font-awesome.min.css',
-        'bower_components/github-markdown-css/github-markdown.css',
-        'dist/main.css'
+        //'bower_components/github-markdown-css/github-markdown.css',
+        'dist/main.css',
+        'style/style.css'
     ]
 };
 gulp.task('clean', function () {
