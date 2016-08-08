@@ -768,4 +768,5 @@ body {
   content: "" !important; }
 
 .markdown-body blockquote:after {
-  content: "" !important; }
+  content: "" !important;
+  margin-left: 0px !important; }

@@ -18,6 +18,14 @@
             <label class="mdl-textfield__label">内容</label>
         </div>
     </div>
+    <div>
+        <div style="width: 100%" class="mdl-textfield  mdl-js-textfield mdl-textfield--expandable">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-1">
+                <input type="checkbox" id="list-checkbox-1" name="publish" class="mdl-checkbox__input" 
+                       <?php echo (isset($publish) && ($publish==1))?'checked':''; ?> /> 发布
+            </label>
+        </div>
+    </div>
     <!-- Colored raised button -->
     <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">保存</button>
 </form>

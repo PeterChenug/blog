@@ -35,11 +35,13 @@ class AdminController extends Controller
             $title = $request->input('title');
             $description = $request->input('description');
             $content = $request->input('content');
+            $publish = $request->input('publish', 0);
             if(!empty($title) && !empty($description) && !empty($content)) {
                 $param = [
                     'title' => $title,
                     'description' => $description,
-                    'content' => $content
+                    'content' => $content,
+                    'publish' => !empty($publish)?1:0
                 ];
                 $article = Article::find($id);
                 if($article) {

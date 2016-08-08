@@ -15,7 +15,7 @@ class Article extends Model
 {
 
     protected $fillable = [
-        'id', 'unique_id','title', 'description', 'content'
+        'id', 'unique_id','title', 'description', 'content', 'publish'
     ];
     protected $table = 'article';
 }
